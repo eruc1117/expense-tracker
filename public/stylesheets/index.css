@@ -1,0 +1,61 @@
+.background {
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1643499725626-f239f90340cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80");
+  background-size: cover;
+  z-index: -1;
+  display:flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+  align-items:flex-start;
+  align-content:center
+}
+#bigWrap {
+  width: 60%;
+  margin-top: 5%;
+  margin-left: 31%;
+}
+
+#wrap {
+  z-index: 1001;
+}
+
+#transparentOne{
+   opacity: 0;
+}
+#transparentTwo{
+   opacity: 0;
+}
+#edit{
+   background:rgba(0, 0, 0, 0);
+   border: rgba(170, 50, 220, 0);
+}
+
+#area1{
+  background:rgba(0, 0, 0, 0);
+}
+
+#item1 {
+   background:rgb(231, 201, 184);
+}
+
+.crud {
+  margin-left: 8%;
+}
+
+.ud {
+  color: aliceblue;
+  margin-left: 2%;
+}
+
+#main {
+  background:rgba(0, 0, 0, 0);
+  border: rgba(170, 50, 220, 0)
+}
+
+#create {
+  z-index: 1001;
+  width: 10%;
+  background-color: rgb(255, 81, 0);
+  border: rgb(0, 0, 0)
+}

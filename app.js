@@ -9,8 +9,10 @@ app.engine('.handlebars', handlebars.engine)
 app.set('view engine', 'handlebars')
 app.set('views', './views')
 
+app.use(express.static('public'))
+
 app.get('/', (req, res) => {
-  res.render('index')
+  res.render('index', { cssStyle: "http://localhost:3000/stylesheets/index.css" })
 })
 
 app.listen(port, () => {

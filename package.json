@@ -19,8 +19,8 @@
     "url": "https://github.com/eruc1117/expense-tracker/issues"
   },
   "homepage": "https://github.com/eruc1117/expense-tracker#readme",
-  "description": "",
   "dependencies": {
     "express": "^4.17.3"
-  }
+  },
+  "description": ""
 }
