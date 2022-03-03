@@ -15,6 +15,10 @@ app.get('/', (req, res) => {
   res.render('index', { cssStyle: "http://localhost:3000/stylesheets/index.css" })
 })
 
+app.get('/edit', (req, res) => {
+  res.render('edit', { cssStyle: "http://localhost:3000/stylesheets/edit.css" })
+})
+
 app.listen(port, () => {
   console.log(`http://localhost:${port}`)
 });
