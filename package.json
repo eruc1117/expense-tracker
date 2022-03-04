@@ -20,7 +20,8 @@
   },
   "homepage": "https://github.com/eruc1117/expense-tracker#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "mongoose": "^6.2.4"
   },
   "description": ""
 }

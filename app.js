@@ -4,6 +4,8 @@ const exphbs = require('express-handlebars')
 const router = require('./routes/index')
 const port = 3000
 
+require('./config/mongoose')
+
 const handlebars = exphbs.create({
 })
 app.engine('.handlebars', handlebars.engine)
