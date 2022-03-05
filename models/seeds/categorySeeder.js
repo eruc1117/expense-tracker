@@ -25,5 +25,5 @@ db.once('open', () => {
     id: 5,
     name: '其他'
   })
-  console.log('mongodb connected!')
+  console.log('create category seed data')
 })
