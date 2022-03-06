@@ -10,10 +10,11 @@ const customizeFun = require('../../function/customizeFun')
 //新增頁面物件
 const index = new customize.PageCss('index')
 
-router.get('/home', (req, res) => {
-  async function totalexpense() {
+router.get('/:id', (req, res) => {
+  const categoryId = req.params.id
+  async function totalexpense(categoryId) {
     try {
-      let totalItem = await Record.find().lean()
+      let totalItem = await Record.find({ categoryId }).lean()
       newTotalItem = totalItem.map(item => {
         //修正日期格式
         const rowDate = item.date
@@ -26,9 +27,11 @@ router.get('/home', (req, res) => {
       newTotalItem.forEach(element => {
         totalAmount += element.amount
       })
+      const category = await Category.findOne({ id: categoryId })
+      const categoryName = category.name
       icon(newTotalItem).then(newTotalItem =>
         res.render(index.view, {
-          cssStyle: index.cssStyle(), newTotalItem, totalAmount, categoryName: '類別'
+          cssStyle: index.cssStyle(), newTotalItem, totalAmount, categoryName
         }))
     } catch (err) {
       console.log(err)
@@ -56,7 +59,7 @@ router.get('/home', (req, res) => {
       console.log(err)
     }
   }
-  totalexpense()
+  totalexpense(categoryId)
 })
 
 
