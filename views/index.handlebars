@@ -1,30 +1,55 @@
 <div class="background">
-  <div id="bigWrap">
-    <select class="form-select w-50 " aria-label="Default select example">
-      <option selected>Open this select menu</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-    <div class="card-group" id="wrap">
-      <div class="card" id="main">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">An item</li>
-          <li class="list-group-item" id="item1">A third item</li>
-        </ul>
+  <div class="container mt-5 w-50">
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <select class="col-8 form-select bg-white" aria-label="Default select example">
+          <option selected>類別</option>
+          <option value="1">家居物業</option>
+          <option value="2">交通出行</option>
+          <option value="3">休閒娛樂</option>
+          <option value="4">餐飲食品</option>
+          <option value="5">其他</option>
+        </select>
       </div>
-      <div class="card" id="edit">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item" id="transparentOne">An item</li>
-          <li class="list-group-item" id="area1">
-            <div class="crud">
-              <a class="ud">修改</a>
-              <a class="ud">刪除</a>
-            </div>
-          </li>
-        </ul>
+      <div class="col-2"></div>
+    </div>
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <div class="bg-white position-relative h-100">
+          <div class="position-absolute top-0 start-0">總金額：</div>
+          <div class="main text-end me-4 w-100 fs-1 me-1" style="color: coral;">
+            {{totalAmount}}
+          </div>
+        </div>
+      </div>
+      <div class="col-2"></div>
+    </div>
+    {{#each newTotalItem}}
+    <div class="row">
+      <div class="col-2"></div>
+      <div class="col-8">
+        <div class="item bg-white position-relative h-100">
+          <div class="icon">
+            <i class="fa-solid fa-{{this.iconHtml}} fa-2xl" style="color: rgb(120, 191, 253)"></i>
+          </div>
+          <p class="name fs-5">{{this.name}}</p>
+          <p class="date fs-6">{{this.date}}</p>
+          <p class="amount">{{this.amount}}</p>
+          <div class="main text-end me-4 w-100 fs-6 text-black">
+          </div>
+        </div>
+      </div>
+      <div class="col-2 d-flex justify-content-around">
+        <a href="/accounts/edit" class="text-white mt-4" style="text-decoration: none">
+          修改
+        </a>
+        <a class="text-white mt-4" style="text-decoration: none">
+          刪除
+        </a>
       </div>
     </div>
+    {{/each}}
   </div>
-  <button type="button" class="btn btn-outline-light mt-2 mx-auto" id="create">新增支出</button>
 </div>

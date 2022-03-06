@@ -8,32 +8,39 @@ db.once('open', () => {
   Category.create({
     id: 1,
     name: '午餐',
-    data: '2019.4.23',
-    amount: 60
+    date: '2019.4.23',
+    amount: 60,
+    categoryId: 4
   })
   Category.create({
     id: 2,
     name: '晚餐',
-    data: '2019.4.23',
-    amount: 60
+    date: '2019.4.23',
+    amount: 60,
+    categoryId: 4
   })
   Category.create({
     id: 3,
     name: '捷運',
-    data: '2019.4.23',
-    amount: 120
+    date: '2019.4.23',
+    amount: 120,
+    categoryId: 2
   })
   Category.create({
     id: 4,
     name: '電影：驚奇隊長',
-    data: '2019.4.23',
-    amount: 220
+    date: '2019.4.23',
+    amount: 220,
+    categoryId: 3
   })
   Category.create({
     id: 5,
     name: '租金',
-    data: '2015.4.01',
-    amount: 25000
+    date: '2015.4.01',
+    amount: 25000,
+    categoryId: 1
+  }).then(() => {
+    console.log('create record seed data')
+    process.exit()
   })
-  console.log('create Record seed data')
 })

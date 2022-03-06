@@ -24,6 +24,8 @@ db.once('open', () => {
   Category.create({
     id: 5,
     name: '其他'
+  }).then(() => {
+    console.log('create category seed data')
+    process.exit()
   })
-  console.log('create category seed data')
 })

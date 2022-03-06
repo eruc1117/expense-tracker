@@ -8,11 +8,15 @@ const RecordSchema = new schema({
   name: {
     type: String
   },
-  data: {
+  date: {
     type: Date
   },
   amount: {
     type: Number
+  },
+  categoryId: {  // 加入關聯設定
+    type: Number,
+    ref: 'categories'
   }
 })
 
