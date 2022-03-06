@@ -45,9 +45,11 @@
         <a href="/crud/edit/{{this.id}}" class="text-white mt-4" style="text-decoration: none">
           修改
         </a>
-        <a class="text-white mt-4" style="text-decoration: none">
-          刪除
-        </a>
+        <form action="/crud/delete/{{this.id}}" method="post">
+          <button class="btn btn-link text-white mt-3" style="text-decoration: none">
+            刪除
+          </button>
+        </form>
       </div>
     </div>
     {{/each}}

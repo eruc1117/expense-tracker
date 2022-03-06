@@ -55,4 +55,11 @@ router.post('/new', (req, res) => {
   createAccount()
 })
 
+router.post('/delete/:id', (req, res) => {
+  const id = req.params.id
+  Record.findOneAndDelete({ id })
+    .then(() =>
+      res.redirect('/accounts/home'))
+})
+
 module.exports = router
