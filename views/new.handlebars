@@ -1,5 +1,5 @@
 <div class="background">
-  <form>
+  <form action="/crud/new" method="post">
     <div class="container">
       <div class="row row-cols-3 mx-auto">
         <div class="col">
@@ -17,7 +17,7 @@
           <p class="titleName text-center">名稱* :</p>
         </div>
         <div class="col">
-          <input class="mx-auto">
+          <input class="mx-auto" value="{{info.name}}" name="name" type="text" required>
           </input>
         </div>
         <div class="col"></div>
@@ -25,18 +25,21 @@
           <p class="titleName text-center">日期* :</p>
         </div>
         <div class="col">
-          <input id="startDate " type="date" />
+          <input id="startDate " type="date" value="{{info.date}}" name="date" required>
+          </input>
         </div>
         <div class="col"></div>
         <div class="col">
           <p class="titleName text-center">類別* :</p>
         </div>
         <div class="col">
-          <select aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+          <select name="categoryId" aria-label="Default select example" required>
+            <option selected>Select</option>
+            <option value="1">家居物業</option>
+            <option value="2">交通出行</option>
+            <option value="3">休閒娛樂</option>
+            <option value="4">餐飲食品</option>
+            <option value="5">其他</option>
           </select>
         </div>
         <div class="col"></div>
@@ -44,12 +47,12 @@
           <p class="titleName text-center">金額* :</p>
         </div>
         <div class="col">
-          <input>
+          <input value="{{info.amount}}" name="amount" type="number" required>
           </input>
         </div>
       </div>
     </div>
-    <button type="button" class="btn btn-outline-light mt-5">
+    <button type="submit" class="btn btn-outline-light mt-5">
       <div id="cresteButtom">新增支出</div>
     </button>
   </form>

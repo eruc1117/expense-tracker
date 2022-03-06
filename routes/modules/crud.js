@@ -38,4 +38,21 @@ router.get('/new', (req, res) => {
   res.render(create.view, { cssStyle: create.cssStyle() })
 })
 
+router.post('/new', (req, res) => {
+  async function createAccount() {
+    try {
+      const newAccount = req.body
+      const totalInfo = await Record.find()
+      totalInfo.length !== 0 ?
+        newAccount['id'] = Number(totalInfo[totalInfo.length - 1].id) + 1 :
+        newAccount['id'] = 1
+      await Record.create(newAccount)
+      res.redirect('/accounts/home')
+    } catch (err) {
+      console.log(err)
+    }
+  }
+  createAccount()
+})
+
 module.exports = router
