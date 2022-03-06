@@ -5,11 +5,10 @@ const Category = require('../../models/categoryModel')
 
 //載入自定義function
 const customize = require('../../function/constructor')
+const customizeFun = require('../../function/customizeFun')
 
 //新增頁面物件
 const index = new customize.PageCss('index')
-const edit = new customize.PageCss('edit')
-const create = new customize.PageCss('new')//new命名會造成衝突，變數改為create
 
 router.get('/home', (req, res) => {
   async function totalexpense() {
@@ -17,14 +16,9 @@ router.get('/home', (req, res) => {
       let totalItem = await Record.find().lean()
       newTotalItem = totalItem.map(item => {
         //修正日期格式
-        let date = item.date.toString().split(" ")
-        date.splice(0, 1)
-        date.splice(3, 6)
-        date.reverse().pop()
-        let month = `0${(item.date.getMonth() + 1).toString()}`
-        date.splice(1, 0, month)
-        newDate = date.join('/')
-        item.date = newDate
+        const rowDate = item.date
+        const newDate = customizeFun.changeDateFormat(rowDate)
+        item.date = newDate.join('/')
         return item
       })
 
@@ -65,12 +59,5 @@ router.get('/home', (req, res) => {
   totalexpense()
 })
 
-router.get('/edit', (req, res) => {
-  res.render(edit.view, { cssStyle: edit.cssStyle() })
-})
-
-router.get('/new', (req, res) => {
-  res.render(create.view, { cssStyle: create.cssStyle() })
-})
 
 module.exports = router
