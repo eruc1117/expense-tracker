@@ -7,6 +7,9 @@ const userSchema = new schema({
   },
   name: {
     type: String
+  },
+  password: {
+    type: String
   }
 })
 
