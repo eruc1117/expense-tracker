@@ -1,0 +1,31 @@
+.background {
+   height: 100vh;
+   background-image: url("https://images.unsplash.com/photo-1643499725626-f239f90340cc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80");
+   background-size: cover;
+   z-index: -1;
+     display: flex;
+    justify-content: center; 
+    align-items: center; 
+}
+
+.card{
+  z-index: 1001;
+}
+#login {
+  background-color: black;
+  border-radius: 100%;
+  width: 100px;
+  margin-right: 150px;
+  line-height: 80px;
+}
+#register {
+  background-color: black;
+  border-radius: 100%;
+  line-height: 80px;
+  width: 100px;
+  margin-left: 150px;
+}
+.card {
+  z-index: 1000;
+}
+
