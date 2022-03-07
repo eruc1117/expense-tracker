@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Record = require('../../models/RecordModel')
 const Category = require('../../models/categoryModel')
+const User = require('../../models/userModel')
 
 //載入自定義function
 const customize = require('../../function/constructor')
@@ -14,7 +15,9 @@ router.get('/:id', (req, res) => {
   const categoryId = req.params.id
   async function totalexpense(categoryId) {
     try {
-      let totalItem = await Record.find({ categoryId }).lean()
+      const userId = req.user._id
+      const userInfo = await User.findOne({ _id: userId })
+      let totalItem = await Record.find({ categoryId, userId: userInfo.id }).lean()
       newTotalItem = totalItem.map(item => {
         //修正日期格式
         const rowDate = item.date

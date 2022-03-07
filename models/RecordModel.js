@@ -17,6 +17,10 @@ const RecordSchema = new schema({
   categoryId: {  // 加入關聯設定
     type: Number,
     ref: 'categories'
+  },
+  userId: {  // 加入關聯設定
+    type: Number,
+    ref: 'users'
   }
 })
 

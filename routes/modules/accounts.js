@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Record = require('../../models/RecordModel')
 const Category = require('../../models/categoryModel')
+const User = require('../../models/userModel')
 
 //載入自定義function
 const customize = require('../../function/constructor')
@@ -13,7 +14,9 @@ const index = new customize.PageCss('index')
 router.get('/home', (req, res) => {
   async function totalexpense() {
     try {
-      let totalItem = await Record.find().lean()
+      const userId = req.user._id
+      const userInfo = await User.findOne({ _id: userId }).lean()
+      const totalItem = await Record.find({ userId: userInfo.id }).lean()
       newTotalItem = totalItem.map(item => {
         //修正日期格式
         const rowDate = item.date
@@ -21,7 +24,6 @@ router.get('/home', (req, res) => {
         item.date = newDate.join('/')
         return item
       })
-
       let totalAmount = 0
       newTotalItem.forEach(element => {
         totalAmount += element.amount
