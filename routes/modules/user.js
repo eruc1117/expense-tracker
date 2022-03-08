@@ -29,7 +29,7 @@ router.post('/rigster', (req, res) => {
   async function rigster(name, password) {
     const userInfo = await User.findOne({ name })
     const lastId = await User.find()
-    let newUser = {}
+    let newUser = { name }
     if (userInfo) {
       return res.redirect('/user/rigster')
     }
