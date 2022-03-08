@@ -3,6 +3,7 @@ const router = express.Router()
 const customize = require('../../function/constructor')
 const User = require('../../models/userModel')
 const passport = require('passport')
+const bcrypt = require('bcryptjs')
 
 const loginUrl = new customize.PageCss('login')
 const rigsterUrl = new customize.PageCss('rigster')
@@ -28,23 +29,23 @@ router.post('/rigster', (req, res) => {
   async function rigster(name, password) {
     const userInfo = await User.findOne({ name })
     const lastId = await User.find()
-    if (!userInfo && !lastId[lastId.length - 1]) {//[lastId.length - 1]，在node v16後可以用 .at(-1)替代 
-      await User.create({
-        id: 1,
-        name,
-        password
-      })
-    } else {
-      await User.create({
-        id: Number(lastId[lastId.length - 1].id) + 1,
-        name,
-        password
-      })
+    let newUser = {}
+    if (userInfo) {
+      return res.redirect('/user/rigster')
     }
+    if (!userInfo && !lastId[lastId.length - 1]) {//[lastId.length - 1]，在node v16後可以用 .at(-1)替代 
+      newUser.id = 1
+    } else {
+      newUser.id = Number(lastId[lastId.length - 1].id) + 1
+    }
+    const salt = await bcrypt.genSalt(10)
+    newUser.password = await bcrypt.hash(password, salt)
+    await User.create(newUser)
+    return res.redirect('/')
   }
   rigster(name, password)
-  res.redirect('/')
 })
+
 
 router.get('/logout', (req, res) => {
   req.logout()
