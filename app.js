@@ -4,6 +4,8 @@ const exphbs = require('express-handlebars')
 const router = require('./routes/index')
 const usePassport = require('./config/passport')
 const session = require('express-session')
+const path = require('path')
+const sassMiddleware = require('node-sass-middleware')
 const port = 3000
 
 require('./config/mongoose')
@@ -14,6 +16,14 @@ app.engine('.handlebars', handlebars.engine)
 app.set('view engine', 'handlebars')
 app.set('views', './views')
 
+app.use(
+  sassMiddleware({
+    src: path.join(__dirname, 'scss'),
+    dest: path.join(__dirname, 'public'),
+    debug: true,
+    outputStyle: 'compressed',
+  })
+)
 app.use(express.static('public'))
 app.use(session({
   secret: 'ThisIsMySecret',
