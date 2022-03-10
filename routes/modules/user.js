@@ -5,11 +5,10 @@ const User = require('../../models/userModel')
 const passport = require('passport')
 const bcrypt = require('bcryptjs')
 
-const loginUrl = new customize.PageCss('login')
-const rigsterUrl = new customize.PageCss('rigster')
+const style = new customize.PageCss('rigsterAndLogin')
 
 router.get('/login', (req, res) => {
-  res.render(loginUrl.view, { cssStyle: loginUrl.cssStyle() })
+  res.render('login', { cssStyle: style.cssStyle() })
 })
 
 router.post('/login', passport.authenticate('local', {
@@ -18,7 +17,7 @@ router.post('/login', passport.authenticate('local', {
 }))
 
 router.get('/rigster', (req, res) => {
-  res.render(rigsterUrl.view, { cssStyle: rigsterUrl.cssStyle() })
+  res.render('rigster', { cssStyle: style.cssStyle() })
 })
 
 router.post('/rigster', (req, res) => {

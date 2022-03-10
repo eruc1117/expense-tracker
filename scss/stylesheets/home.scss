@@ -62,7 +62,6 @@ input:invalid {
 }
 /* start */
 
-@import './modules/home/body';
 
 @import './modules/home/container';
 
@@ -70,7 +69,6 @@ input:invalid {
 BREAKPOINTS
 **************************************/
 @media screen and (min-width: 900px) {
-  @import './modules/home/body';
 
   @import './modules/home/container';
 

@@ -1,28 +1,19 @@
-<div class="background">
-  <div class="card mt-5">
-    <h1 class="text-center">Rigster</h1>
-    <form action="/user/rigster" method="post">
-      <div class="mt-5">
-        <label for="name" class="rigster">name</label>
-        <div>
-          <input id="name" type="text" name="name">
-        </div>
-      </div>
-      <div>
-        <label for="password" class="rigster">Password</label>
-        <div>
-          <input id="password" type="password" name="password">
-        </div>
-      </div>
-      <div>
-        <label for="confirmPassword" class="rigster">Confirm Password</label>
-        <div>
-          <input id="confirmPassword" name="confirmPassword" type="password">
-        </div>
-      </div>
-      <div class="mt-4">
-        <button type="submit">Rigster</button>
-      </div>
-    </form>
+<h1>Rigster</h1>
+
+<form action="/user/rigster" method="post">
+  <div class="container">
+    <div class="label">
+      <label for="name">Name</label>
+      <input id="name" name="name">
+    </div>
+    <div class="password">
+      <label for="password">Password</label>
+      <input id="password" name="password">
+    </div>
+    <div class="confirm-password">
+      <label for="confirmPassword">Confirm Password</label>
+      <input id="confirmPassword" name="confirmPassword">
+    </div>
+    <button type="submit">Rigster</button>
   </div>
-</div>
+</form>
