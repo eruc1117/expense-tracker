@@ -76,11 +76,10 @@ $nameDatePosition: 65px;
   @include flex(column)
 }
 
-select {
+.dropdown {
   width: $blockWidth;
   height: 30px;
   margin-top: 5%;
-
 }
 
 .container {
@@ -98,7 +97,7 @@ select {
     top: 5px;
     left: 5px;
   }
-  .amount {
+  .all {
     height: 100px;    
     line-height: 100px; 
     text-align:right; 

@@ -1,19 +1,26 @@
 <div class="category-selection">
-  <select name="category">
-    <option>類別</option>
-    <option>總支出</option>
-    <option>家居物業</option>
-    <option>交通出行</option>
-    <option>休閒娛樂</option>
-    <option>餐飲食品</option>
-    <option>其他</option>
-  </select>
+  <div class="dropdown">
+    <div class="btn bg-white dropdown-toggle text-end w-100 position-relative" href="#" role="button"
+      id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="position-absolute top-50 start-0 translate-middle-y">
+        {{categoryName}}
+      </div>
+    </div>
+    <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuLink">
+      <li><a class="dropdown-item" href="/accounts/home">總計</a></li>
+      <li><a class="dropdown-item" href="/sort/1">家居物業</a></li>
+      <li><a class="dropdown-item" href="/sort/2">交通出行</a></li>
+      <li><a class="dropdown-item" href="/sort/3">休閒娛樂</a></li>
+      <li><a class="dropdown-item" href="/sort/4">餐飲食品</a></li>
+      <li><a class="dropdown-item" href="/sort/5">其他</a></li>
+    </ul>
+  </div>
 </div>
 
 <div class="container">
   <div class="total-amount">
     <p class="title">總金額：</p>
-    <p class="amount">{{totalAmount}}</p>
+    <p class="all"></p>
   </div>
   <div class="item-list">
     {{#each newTotalItem}}
@@ -39,3 +46,6 @@
     </p>
   </a>
 </div>
+
+
+<script src="/javascripts/index.js"></script>

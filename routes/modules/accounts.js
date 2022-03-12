@@ -24,13 +24,9 @@ router.get('/home', (req, res) => {
         item.date = newDate.join('/')
         return item
       })
-      let totalAmount = 0
-      newTotalItem.forEach(element => {
-        totalAmount += element.amount
-      })
       icon(newTotalItem).then(newTotalItem =>
         res.render(index.view, {
-          cssStyle: index.cssStyle(), newTotalItem, totalAmount, categoryName: '類別'
+          cssStyle: index.cssStyle(), newTotalItem, categoryName: '類別'
         }))
     } catch (err) {
       console.log(err)
