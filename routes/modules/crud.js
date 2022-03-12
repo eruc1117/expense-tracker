@@ -66,7 +66,7 @@ router.post('/new', (req, res) => {
   createAccount()
 })
 
-router.post('/delete/:id', (req, res) => {
+router.get('/delete/:id', (req, res) => {
   async function deleteAccount() {
     try {
       const id = req.params.id

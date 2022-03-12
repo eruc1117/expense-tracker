@@ -1,0 +1,178 @@
+ /* reset css */
+body {
+  margin: 0;
+  padding: 0;
+}
+* {
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0px;
+  padding: 0px;
+}
+ul,
+ol,
+li {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.btn,
+button,
+button:focus,
+input:focus,
+textarea:focus,
+select,
+select:focus,
+a:focus {
+  outline: 0px !important;
+}
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+button[disabled] {
+  pointer-events: none;
+}
+input {
+  padding: 0;
+}
+input:required {
+  box-shadow: none;
+}
+input:invalid {
+  box-shadow: none;
+}
+/* start */
+$blockWidth: 400px;
+$nameDatePosition: 65px;
+
+@mixin  flex ($direction) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+}
+.category-selection {
+  @include flex(column)
+}
+
+select {
+  width: $blockWidth;
+  height: 30px;
+  margin-top: 5%;
+
+}
+
+.container {
+  margin-top: 3%;
+  @include flex(column)
+}
+
+.total-amount {
+  background-color: white;
+  width: $blockWidth;
+  height: 100px;
+  position: relative;
+  .title {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+  }
+  .amount {
+    height: 100px;    
+    line-height: 100px; 
+    text-align:right; 
+    margin-right: 1%;
+    font-size: 60px;
+    color: rgb(255, 94, 0);
+  }
+}
+.item-list {
+  background-color: rgb(255, 255, 255);
+  :nth-child(odd) {
+  background-color: rgb(255, 217, 159);
+  }
+}
+.item {
+  width: $blockWidth;
+  height: 50px;
+  position: relative;
+  :nth-child(n) {
+    background-color: rgba($color: #000000, $alpha: 0);//利用後面預設層級高的將內容設為透明
+  }
+  i {
+    color: rgb(102, 191, 243);
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+  .name {
+    position: absolute;
+    top: -1px;
+    left: $nameDatePosition;
+    font-size: 24px;
+  }
+  .date {
+    position: absolute;
+    top: 30px;
+    left: $nameDatePosition;
+  }
+  .amount {
+    height: 50px;    
+    line-height: 50px; 
+    text-align:right; 
+    margin-right: 1%;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+  }
+  .edit-delete {
+    height: 50px;    
+    line-height: 50px; 
+    text-align:right; 
+    margin-right: -30%;
+    margin-top: -50px;
+  }
+  a {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+  }
+  .edit {
+    margin-right: 5%;
+  }
+}
+
+.create {
+  margin-top: 2%;
+  height: 35px;
+  width: $blockWidth/2;
+  background-color: rgb(255, 217, 159);
+  border: 2px;
+  border-width:2px; 
+  border-color:#000000; 
+  border-style:solid;
+  text-align: center;
+  p {
+    margin-top: 4px;
+  }
+}
