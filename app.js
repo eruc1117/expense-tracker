@@ -13,7 +13,7 @@ const handlebars = exphbs.create({
 })
 app.engine('.handlebars', handlebars.engine)
 app.set('view engine', 'handlebars')
-app.set('views', './views')
+app.set('views', '/views')
 
 app.use(
   sassMiddleware({
