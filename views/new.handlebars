@@ -1,59 +1,35 @@
-<div class="background">
-  <form action="/crud/new" method="post">
-    <div class="container">
-      <div class="row row-cols-3 mx-auto">
-        <div class="col">
-          <p class="text-center">
-            *必填欄位
-          </p>
-        </div>
-        <div class="col">
-          <div class="text-center mx-auto mb-4" id="title">
-            請輸入你的支出
-          </div>
-        </div>
-        <div class="col"></div>
-        <div class="col">
-          <p class="titleName text-center">名稱* :</p>
-        </div>
-        <div class="col">
-          <input class="mx-auto" value="{{info.name}}" name="name" type="text" required>
-          </input>
-        </div>
-        <div class="col"></div>
-        <div class="col">
-          <p class="titleName text-center">日期* :</p>
-        </div>
-        <div class="col">
-          <input id="startDate " type="date" value="{{info.date}}" name="date" required>
-          </input>
-        </div>
-        <div class="col"></div>
-        <div class="col">
-          <p class="titleName text-center">類別* :</p>
-        </div>
-        <div class="col">
-          <select name="categoryId" aria-label="Default select example" required>
-            <option selected>Select</option>
-            <option value="1">家居物業</option>
-            <option value="2">交通出行</option>
-            <option value="3">休閒娛樂</option>
-            <option value="4">餐飲食品</option>
-            <option value="5">其他</option>
-          </select>
-        </div>
-        <div class="col"></div>
-        <div class="col">
-          <p class="titleName text-center">金額* :</p>
-        </div>
-        <div class="col">
-          <input value="{{info.amount}}" name="amount" type="number" required>
-          </input>
-        </div>
-      </div>
-    </div>
-    <button type="submit" class="btn btn-outline-light mt-5">
-      <div id="cresteButtom">新增支出</div>
-    </button>
-  </form>
+<div class="title-block">
+  <h1>請輸入你的支出</h1>
+  <p><sup>*</sup>必填欄位</p>
 </div>
+
+<form action="/crud/new" method="post">
+  <div class="container">
+    <div class="label">
+      <label for="name">名稱<sup>*</sup></label>
+      <input id="name" name="name" type="text" required>
+    </div>
+    <div class="password">
+      <label for="date">日期<sup>*</sup></label>
+      <input id="date" type="date" name="date" required>
+      </input>
+    </div>
+    <div class="category">
+      <label for="category">類別<sup>*</sup></label>
+      <select id="category" name="categoryId" aria-label="Default select example" required>
+        <option selected>類別</option>
+        <option value="1">家居物業</option>
+        <option value="2">交通出行</option>
+        <option value="3">休閒娛樂</option>
+        <option value="4">餐飲食品</option>
+        <option value="5">其他</option>
+      </select>
+    </div>
+    <div class="amount">
+      <label for="amount">金額<sup>*</sup></label>
+      <input id="amount" name="amount" type="number" min="0" required>
+      </input>
+    </div>
+    <button type="submit">新增支出</button>
+  </div>
+</form>
