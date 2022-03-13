@@ -18,7 +18,7 @@ if (PORT === 3000) {
 } else {
   app.engine('.handlebars', handlebars.engine)
   app.set('view engine', 'handlebars')
-  app.set('views', 'app/views')
+  app.set('views', '/app/views')
 }
 
 app.use(
