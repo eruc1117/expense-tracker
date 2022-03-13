@@ -11,9 +11,15 @@ require('./config/mongoose')
 
 const handlebars = exphbs.create({
 })
-app.engine('.handlebars', handlebars.engine)
-app.set('view engine', 'handlebars')
-app.set('views', '/views')
+if (PORT === 3000) {
+  app.engine('.handlebars', handlebars.engine)
+  app.set('view engine', 'handlebars')
+  app.set('views', './views')
+} else {
+  app.engine('.handlebars', handlebars.engine)
+  app.set('view engine', 'handlebars')
+  app.set('views', 'app/views')
+}
 
 app.use(
   sassMiddleware({
