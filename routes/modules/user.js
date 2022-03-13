@@ -8,7 +8,7 @@ const bcrypt = require('bcryptjs')
 const style = new customize.PageCss('rigsterAndLogin')
 
 router.get('/login', (req, res) => {
-  res.render('login', { cssStyle: style.cssStyle() })
+  res.render('login', { cssStyle: style.css })
 })
 
 router.post('/login', passport.authenticate('local', {
@@ -17,7 +17,7 @@ router.post('/login', passport.authenticate('local', {
 }))
 
 router.get('/rigster', (req, res) => {
-  res.render('rigster', { cssStyle: style.cssStyle() })
+  res.render('rigster', { cssStyle: style.css })
 })
 
 router.post('/rigster', (req, res) => {

@@ -1,10 +1,7 @@
 function PageCss(name) {
-  this.view = name
+  this.css = `http://localhost:3000/stylesheets/${this.name}.css`
 }
 
-PageCss.prototype.cssStyle = function () {
-  return `http://localhost:3000/stylesheets/${this.view}.css`
-}
 module.exports = {
   PageCss
 }

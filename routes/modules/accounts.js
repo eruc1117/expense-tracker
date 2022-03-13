@@ -25,8 +25,8 @@ router.get('/home', (req, res) => {
         return item
       })
       icon(newTotalItem).then(newTotalItem =>
-        res.render(index.view, {
-          cssStyle: index.cssStyle(), newTotalItem, categoryName: '類別'
+        res.render('index', {
+          cssStyle: index.css, newTotalItem, categoryName: '類別'
         }))
     } catch (err) {
       console.log(err)

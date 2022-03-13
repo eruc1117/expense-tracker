@@ -10,7 +10,7 @@ const customizeFun = require('../../function/customizeFun')
 
 
 //新增頁面物件
-const style = new customize.PageCss('newAndEdit')
+const page = new customize.PageCss('newAndEdit')
 
 
 router.get('/edit/:id', (req, res) => {
@@ -23,7 +23,7 @@ router.get('/edit/:id', (req, res) => {
     info.date = dateArray.join('-')
     const category = await Category.findOne({ id: info.categoryId })
     info.categoryName = category.name
-    res.render('edit', { cssStyle: style.cssStyle(), info })
+    res.render('edit', { cssStyle: page.css, info })
   }
   getInfo(id)
 })
@@ -43,7 +43,7 @@ router.post('/edit/:id', (req, res) => {
 })
 
 router.get('/new', (req, res) => {
-  res.render('new', { cssStyle: style.cssStyle() })
+  res.render('new', { cssStyle: page.css })
 })
 
 router.post('/new', (req, res) => {

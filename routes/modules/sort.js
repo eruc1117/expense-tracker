@@ -34,7 +34,7 @@ router.get('/:id', (req, res) => {
       const categoryName = category.name
       icon(newTotalItem).then(newTotalItem =>
         res.render(index.view, {
-          cssStyle: index.cssStyle(), newTotalItem, totalAmount, categoryName
+          cssStyle: index.css, newTotalItem, totalAmount, categoryName
         }))
     } catch (err) {
       console.log(err)
