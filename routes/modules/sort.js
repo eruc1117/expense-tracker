@@ -25,16 +25,11 @@ router.get('/:id', (req, res) => {
         item.date = newDate.join('/')
         return item
       })
-
-      let totalAmount = 0
-      newTotalItem.forEach(element => {
-        totalAmount += element.amount
-      })
       const category = await Category.findOne({ id: categoryId })
       const categoryName = category.name
       icon(newTotalItem).then(newTotalItem =>
-        res.render(index.view, {
-          cssStyle: index.css, newTotalItem, totalAmount, categoryName
+        res.render('index', {
+          cssStyle: index.css, newTotalItem, categoryName
         }))
     } catch (err) {
       console.log(err)
