@@ -64,22 +64,3 @@ input:invalid {
 
 
 @import './modules/home/container';
-
-/**************************************
-BREAKPOINTS
-**************************************/
-@media screen and (min-width: 900px) {
-
-  @import './modules/home/container';
-
-.container {
-  flex-direction:row;
-  justify-content:space-between;
-  flex-wrap: wrap;
-  align-items:flex-start;
-  height: 800px;
-  width: 1000px;
-  margin: auto;
-  margin-top: 20%;
-  }
-}
