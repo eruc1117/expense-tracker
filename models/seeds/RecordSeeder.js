@@ -1,10 +1,22 @@
 const db = require('../../config/mongoose')
 const Category = require('../RecordModel')
+const User = require()
 
 db.on('error', () => {
   console.log('mongodb error!')
 })
+
+
 db.once('open', () => {
+  
+  User.create({
+    id: 1,
+    name: '廣志'
+  })
+  User.create({
+    id: 2,
+    name: '小新'
+  })
   Category.create({
     id: 1,
     name: '午餐',
