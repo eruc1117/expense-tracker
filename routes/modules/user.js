@@ -21,14 +21,14 @@ router.get('/rigster', (req, res) => {
 })
 
 router.post('/rigster', (req, res) => {
-  const { name, password, confirmPassword } = req.body
+  const { name, email, password, confirmPassword } = req.body
   if (password !== confirmPassword) {
     return res.redirect('/user/rigster')
   }
-  async function rigster(name, password) {
-    const userInfo = await User.findOne({ name })
+  async function rigster(name, email, password) {
+    const userInfo = await User.findOne({ email })
     const lastId = await User.find()
-    let newUser = { name }
+    let newUser = { email }
     if (userInfo) {
       return res.redirect('/user/rigster')
     }
@@ -39,10 +39,11 @@ router.post('/rigster', (req, res) => {
     }
     const salt = await bcrypt.genSalt(10)
     newUser.password = await bcrypt.hash(password, salt)
+    newUser.name = name
     await User.create(newUser)
     return res.redirect('/')
   }
-  rigster(name, password)
+  rigster(name, email, password)
 })
 
 

@@ -7,10 +7,10 @@ const bcrypt = require('bcryptjs')
 module.exports = app => {
   app.use(passport.initialize())
   app.use(passport.session())
-  passport.use(new LocalStrategy({ usernameField: 'name' },
-    async function (name, password, done) {
+  passport.use(new LocalStrategy({ usernameField: 'email' },
+    async function (email, password, done) {
       try {
-        const user = await User.findOne({ name })
+        const user = await User.findOne({ email })
         if (!user) {
           return done(null, false)
         }

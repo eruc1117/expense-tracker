@@ -5,6 +5,9 @@ const userSchema = new schema({
   id: {
     type: Number
   },
+  email: {
+    type: String
+  },
   name: {
     type: String
   },
