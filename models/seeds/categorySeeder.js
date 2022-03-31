@@ -1,12 +1,12 @@
 const db = require('../../config/mongoose')
 const categoryModel = require('../categoryModel')
 
-const categoryJson = require('./categoryJson')
+const categoryJson = require('./seedJson/categoryJson')
 const categoryList = JSON.parse(categoryJson)
 
-require('../../config/mongoose')
 
 try {
+  require('../../config/mongoose')
   for (let index = 0; index < categoryList.length; index++) {
     categoryModel.create(categoryList[index])
       .then(() => {
