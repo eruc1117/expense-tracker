@@ -5,32 +5,35 @@
   flex-direction: $direction;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   align-content: center;
 }
 
 @mixin border ($color) {
-    border: 2px;
-    border-width:2px; 
-    border-color: $color; 
-    border-style:solid;
+  border: 2px;
+  border-width: 2px;
+  border-color: $color;
+  border-style: solid;
 }
 
 $input-width : 200px;
 
-.title-block{
+.title-block {
   @include flex-display(column);
+
   h1 {
-  font-size: 24px;
-  margin-top: 5%;
-  text-align: center;
-  color: white;
+    font-size: 24px;
+    margin-top: 5%;
+    text-align: center;
+    color: white;
   }
+
   p {
     margin-top: 2%;
     position: relative;
     color: white;
   }
+
   sup {
     color: white;
   }
@@ -39,85 +42,98 @@ $input-width : 200px;
 
 
 .container {
-  margin-top: 8%;
+  margin-top: 4%;
   @include flex-display(column);
+
   div {
     position: relative;
   }
+
   input {
     margin-bottom: 40px;
     height: 40px;
     width: $input-width;
   }
+
   select {
     margin-bottom: 40px;
     height: 40px;
-    width: $input-width;  
+    width: $input-width;
   }
+
   label {
     font-size: 20px;
     color: white;
     position: absolute;
     top: -30px;
   }
+
   button {
     height: 40px;
     width: $input-width;
     background-color: rgb(255, 255, 255);
     @include border (rgb(3, 2, 2));
     color: rgb(0, 0, 0);
+
     &:hover {
       background-color: rgb(0, 0, 0);
       color: rgb(255, 255, 255);
-      border-width: 0px; 
+      border-width: 0px;
     }
-  } 
+  }
 }
 
 @media screen and (min-width: 900px) {
 
-  .title-block{
-  @include flex-display(row);
-  color: white;
-  position: relative;
-  h1 {
-  font-size: 48px;
-  margin-top: 5%;
-  text-align: center;
-  }
+  .title-block {
+    @include flex-display(row);
+    color: white;
+    position: relative;
+
+    h1 {
+      font-size: 48px;
+      margin-top: 5%;
+      text-align: center;
+    }
+
     p {
       position: absolute;
       top: 40%;
       margin-right: 540px;
     }
   }
+
   .container {
-    margin-top: 8%;
     @include flex-display(column);
-      div {
+
+    div {
       position: relative;
-      }
-      input {
-        margin-bottom: 40px;
-        height: 50px;
-        width: $input-width*2;
-      }
-        select {
-        margin-bottom: 40px;
-        height: 50px;
-        width: $input-width*2;  
-      }
-      label {
-        font-size: 24px;
-        color: white;
-        position: absolute;
-        top: 10px;
-        left: -100px;
-      }
-      button {
-        font-size: 24px;
-        height: 50px;
-        width: $input-width*2;
-    } 
+    }
+
+    input {
+      margin-bottom: 40px;
+      height: 50px;
+      width: $input-width*2;
+    }
+
+    select {
+      margin-bottom: 40px;
+      height: 50px;
+      width: $input-width*2;
+    }
+
+    label {
+      font-size: 24px;
+      color: white;
+      position: absolute;
+      top: 10px;
+      left: -100px;
+    }
+
+    button {
+      font-size: 24px;
+      height: 50px;
+      width: $input-width*2;
+    }
   }
 }
