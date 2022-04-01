@@ -6,6 +6,7 @@ const usePassport = require('./config/passport')
 const session = require('express-session')
 const path = require('path')
 const sassMiddleware = require('node-sass-middleware')
+const cookieParser = require('cookie-parser')
 const PORT = process.env.PORT || 3000
 require('./config/mongoose')
 
@@ -35,6 +36,7 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }))
+app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }))
 usePassport(app)
 app.use((req, res, next) => {
