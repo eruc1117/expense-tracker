@@ -78,23 +78,23 @@ record:
 
 ## wireframe
 
-#首頁 
+#首頁 /br
 ![image](wireframe/home_page.png)
 
-#登入及註冊
+#登入及註冊/br
 ![image](wireframe/rigster_login.png)
 
-#總清單
+#總清單/br
 ![image](wireframe/index_page.png)
 
-#建立之修改支出
+#建立或修改支出/br
 ![image](wireframe/new_edit.png)
 
 ## Running the tests
-![image](screenshot/index.png)
+![image](screenShot/index.png)
 顯示全部的支出
 
-![image](screenshot/edit.png)
+![image](screenShot/edit.png)
 顯示修改頁面
 
 ## 關於忘記密碼驗證方式
