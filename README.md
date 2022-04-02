@@ -85,25 +85,18 @@ record:
 ![image](wireframe/rigster_login.png)
 
 #總清單
+![image](wireframe/index_page.png)
 
 #建立之修改支出
 ![image](wireframe/new_edit.png)
 
 ## Running the tests
-![image](screenshot/index_page.png)
-顯示餐廳清單
+![image](screenshot/index.png)
+顯示全部的支出
 
-![image](screenshot/show_page.png)
-顯示餐廳詳細資料，右下角增加功能列
+![image](screenshot/edit.png)
+顯示修改頁面
 
-![image](screenshot/edit_page.png)
-顯示edit頁面
-
-![image](screenshot/new_page.png)
-顯示new頁面
-
-![image](screenshot/login_page.png)
-顯示登入頁面
-
-![image](screenshot/register_page.png)
-顯示註冊畫面
+## 關於忘記密碼驗證方式
+routes/modules/user.js中*****分別填入Google帳號密碼，
+需要在Google減弱帳號安全性，或是增加app password。
