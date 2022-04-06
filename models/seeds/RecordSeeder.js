@@ -20,7 +20,7 @@ try {
     }
   })
   Record.create(recordList).then(() => {
-    process.exit()
+    db.close()
   })
 } catch (err) {
   console.log(err)
