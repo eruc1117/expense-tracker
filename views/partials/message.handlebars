@@ -1,18 +1,14 @@
 {{#if error_msg}}
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
+<div class="alert alert-info" role="alert">
   {{{error_msg}}}
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">×
-  </button>
+  '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 {{/if}}
 {{#if msg}}
 {{#each msg}}
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
+<div class="alert alert-warning" role="alert">
   {{ this }}
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">×
-  </button>
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 </div>
 {{/each}}
 {{/if}}
