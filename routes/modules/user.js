@@ -15,7 +15,8 @@ router.get('/login', (req, res) => {
 
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/accounts/home',
-  failureRedirect: '/user/login'
+  failureRedirect: '/user/login',
+  failureMessage: true
 }))
 
 router.get('/rigster', (req, res) => {
@@ -30,9 +31,10 @@ router.post('/rigster', (req, res) => {
   async function rigster(name, email, password) {
     const userInfo = await User.findOne({ email })
     const lastId = await User.find()
-    let newUser = { email }
+    let newUser = { name, email }
     if (userInfo) {
-      return res.redirect('/user/rigster')
+      const errorMsg = `這個 Email 已經註冊過了。`
+      return res.render('rigster', { userInfo: newUser, error_msg: errorMsg, cssStyle: style.css })
     }
     if (!userInfo && !lastId[lastId.length - 1]) {//[lastId.length - 1]，在node v16後可以用 .at(-1)替代 
       newUser.id = 1

@@ -42,6 +42,8 @@ usePassport(app)
 app.use((req, res, next) => {
   res.locals.isAuthenticated = req.isAuthenticated()
   res.locals.user = req.user
+  res.locals.msg = ``
+  res.locals.msg = req.session.messages// passport.js 中done(null, false, { message: 'That email is not registered!' })的message回傳
   next()
 })
 app.use(router)

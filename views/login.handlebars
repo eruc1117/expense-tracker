@@ -1,5 +1,5 @@
 <h1>Login</h1>
-
+{{> message}}
 <form action="/user/login" method="post">
   <div class="container">
     <div class="label">
@@ -11,6 +11,7 @@
       <input type="password" id="password" name="password" required>
     </div>
     <button type="submit">Login</button>
+    <a class="rigster" href="/user/rigster">Rigster</a>
     <a class="resetPassword" href="/user/forgetPassword">Forget Password</a>
   </div>
 </form>
