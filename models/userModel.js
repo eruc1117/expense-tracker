@@ -11,8 +11,7 @@ const userSchema = new schema({
     required: true
   },
   name: {
-    type: String,
-    required: true
+    type: String
   },
   password: {
     type: String,
