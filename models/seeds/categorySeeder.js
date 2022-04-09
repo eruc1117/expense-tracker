@@ -1,5 +1,5 @@
 const db = require('../../config/mongoose')
-const categoryModel = require('../categoryModel')
+const CategoryModel = require('../CategoryModel')
 
 const categoryJson = require('./seedJson/categoryJson')
 const categoryList = JSON.parse(categoryJson)
@@ -8,7 +8,7 @@ const categoryList = JSON.parse(categoryJson)
 try {
   require('../../config/mongoose')
   for (let index = 0; index < categoryList.length; index++) {
-    categoryModel.create(categoryList[index])
+    CategoryModel.create(categoryList[index])
       .then(() => {
         if ((index + 1) === categoryList.length) {
           db.close()

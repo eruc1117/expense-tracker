@@ -3,23 +3,29 @@ const schema = mongoose.Schema
 
 const RecordSchema = new schema({
   id: {
-    type: Number
+    type: Number,
+    required: true
   },
   name: {
-    type: String
+    type: String,
+    required: true
   },
   date: {
-    type: Date
+    type: Date,
+    required: true
   },
   amount: {
-    type: Number
+    type: Number,
+    required: true
   },
   categoryId: {  // 加入關聯設定
     type: Number,
+    required: true,
     ref: 'categories'
   },
   userId: {  // 加入關聯設定
     type: Number,
+    required: true,
     ref: 'users'
   }
 })

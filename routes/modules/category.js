@@ -1,8 +1,8 @@
 const express = require('express')
 const router = express.Router()
 const Record = require('../../models/RecordModel')
-const Category = require('../../models/categoryModel')
-const User = require('../../models/userModel')
+const Category = require('../../models/CategoryModel')
+const User = require('../../models/UserModel')
 
 //載入自定義function
 const customize = require('../../function/constructor')

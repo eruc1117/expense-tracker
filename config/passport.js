@@ -1,7 +1,7 @@
 const res = require('express/lib/response')
 const passport = require('passport')
 const LocalStrategy = require('passport-local').Strategy
-const User = require('../models/userModel')
+const User = require('../models/UserModel')
 const bcrypt = require('bcryptjs')
 
 module.exports = app => {

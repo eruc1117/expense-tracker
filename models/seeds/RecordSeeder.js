@@ -1,5 +1,5 @@
 const db = require('../../config/mongoose')
-const User = require('../userModel')
+const User = require('../UserModel')
 const Record = require('../RecordModel')
 const bcrypt = require('bcryptjs')
 const userList = JSON.parse(require('./seedJson/userJson'))
