@@ -8,11 +8,11 @@
     </div>
     <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenuLink">
       <li><a class="dropdown-item" href="/accounts/home">總計</a></li>
-      <li><a class="dropdown-item" href="/sort/1">家居物業</a></li>
-      <li><a class="dropdown-item" href="/sort/2">交通出行</a></li>
-      <li><a class="dropdown-item" href="/sort/3">休閒娛樂</a></li>
-      <li><a class="dropdown-item" href="/sort/4">餐飲食品</a></li>
-      <li><a class="dropdown-item" href="/sort/5">其他</a></li>
+      <li><a class="dropdown-item" href="/category/1">家居物業</a></li>
+      <li><a class="dropdown-item" href="/category/2">交通出行</a></li>
+      <li><a class="dropdown-item" href="/category/3">休閒娛樂</a></li>
+      <li><a class="dropdown-item" href="/category/4">餐飲食品</a></li>
+      <li><a class="dropdown-item" href="/category/5">其他</a></li>
     </ul>
   </div>
 </div>
@@ -30,17 +30,17 @@
       <p class="date">{{this.date}}</p>
       <p class="amount">{{this.amount}}</p>
       <div class="edit-delete">
-        <a class="edit" href="/crud/edit/{{this.id}}">
+        <a class="edit" href="/recordCrud/edit/{{this.id}}">
           修改
         </a>
-        <a href="/crud/delete/{{this.id}}">
+        <a href="/recordCrud/delete/{{this.id}}">
           刪除
         </a>
       </div>
     </div>
     {{/each}}
   </div>
-  <a href="/crud/new" class="create">
+  <a href="/recordCrud/new" class="create">
     <p>
       新增支出
     </p>

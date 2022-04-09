@@ -3,6 +3,7 @@ const router = express.Router()
 const Record = require('../../models/RecordModel')
 const Category = require('../../models/CategoryModel')
 const User = require('../../models/UserModel')
+const PORT = process.env.PORT || 3000
 
 //載入自定義function
 const customize = require('../../function/constructor')
@@ -10,7 +11,7 @@ const customizeFun = require('../../function/customizeFun')
 
 
 //新增頁面物件
-const page = new customize.PageCss('newAndEdit')
+const page = new customize.PageCss('newAndEdit', PORT)
 
 
 router.get('/edit/:id', (req, res) => {
