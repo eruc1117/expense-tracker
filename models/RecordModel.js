@@ -26,7 +26,7 @@ const RecordSchema = new schema({
   userId: {  // 加入關聯設定
     type: Number,
     required: true,
-    ref: 'users'
+    ref: 'User'
   }
 })
 
