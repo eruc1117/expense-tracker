@@ -4,7 +4,7 @@ const router = express.Router()
 const home = require('./modules/home')
 const user = require('./modules/user')
 const accounts = require('./modules/accounts')
-const recordController = require('./modules/recordController')
+const recordController = require('./modules/record')
 const category = require('./modules/category')
 // middleware驗證登入
 const { authenticator } = require('../middleware/auth')
